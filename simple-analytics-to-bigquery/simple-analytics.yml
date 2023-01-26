@@ -6,7 +6,7 @@ spec:
   tables:
     ["*"]
   destinations:
-    - "postgresql"
+    - "bigquery"
   spec:
     user_id: ${SA_USER_ID}
     api_key: ${SA_API_KEY}
