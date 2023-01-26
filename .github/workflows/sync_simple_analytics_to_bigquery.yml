@@ -1,0 +1,36 @@
+name: Sync Simple Analytics to BigQuery
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # daily at 02:00 UTC
+
+jobs:
+  simple-analytics-to-bigquery:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: simple-analytics-to-bigquery
+    permissions:
+      id-token: 'write' # This required for OIDC
+      contents: 'read' # This is required for actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: Authenticate to Google Cloud
+        uses: 'google-github-actions/auth@v0'
+        with:
+          workload_identity_provider: 'projects/553278872062/locations/global/workloadIdentityPools/cloudquery-pool/providers/cloudquery-provider'
+          service_account: 'cloudquery-service-account@cq-analytics-v1.iam.gserviceaccount.com'
+      - uses: cloudquery/setup-cloudquery@v3
+        name: Setup CloudQuery
+        with:
+          version: "v2.3.1"
+      - name: CloudQuery Sync
+        run: cloudquery sync --log-console simple-analytics.yml bigquery.yml
+        env:
+          SA_USER_ID: ${{ secrets.SA_USER_ID }}
+          SA_API_KEY: ${{ secrets.SA_API_KEY }}
+          BIGQUERY_PROJECT_ID: ${{ secrets.BIGQUERY_PROJECT_ID }}
+          BIGQUERY_DATASET_ID: ${{ secrets.BIGQUERY_DATASET_ID }}
