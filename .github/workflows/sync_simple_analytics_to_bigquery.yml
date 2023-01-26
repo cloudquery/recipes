@@ -33,5 +33,5 @@ jobs:
         env:
           SA_USER_ID: ${{ secrets.SA_USER_ID }}
           SA_API_KEY: ${{ secrets.SA_API_KEY }}
-          BIGQUERY_PROJECT_ID: ${{ secrets.BIGQUERY_PROJECT_ID }}
-          BIGQUERY_DATASET_ID: ${{ secrets.BIGQUERY_DATASET_ID }}
+          SA_BIGQUERY_PROJECT_ID: ${{ secrets.BIGQUERY_PROJECT_ID }}
+          SA_BIGQUERY_DATASET_ID: ${{ secrets.BIGQUERY_DATASET_ID }}
