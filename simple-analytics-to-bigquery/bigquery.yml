@@ -5,5 +5,5 @@ spec:
   version: "v2.1.2"
   write_mode: "append"
   spec:
-    project_id: ${PROJECT_ID}
-    dataset_id: ${DATASET_ID}
+    project_id: ${SA_BIGQUERY_PROJECT_ID}
+    dataset_id: ${SA_BIGQUERY_DATASET_ID}
