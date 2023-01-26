@@ -10,7 +10,6 @@ spec:
   spec:
     user_id: ${SA_USER_ID}
     api_key: ${SA_API_KEY}
-    duration: 1y
     websites:
       - hostname: cloudquery.io
         metadata_fields:
