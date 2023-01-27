@@ -37,5 +37,7 @@ jobs:
           SA_BIGQUERY_DATASET_ID: ${{ secrets.SA_BIGQUERY_DATASET_ID }}
       - name: Set up Cloud SDK
         uses: 'google-github-actions/setup-gcloud@v1'
-      - name: Deduplicate tables
-        run: bq query --flagfile deduplicate.sql
+      - name: Deduplicate page views
+        run: bq query --use_legacy_sql=False --flagfile deduplicate_page_views.sql
+      - name: Deduplicate events
+        run: bq query --use_legacy_sql=False --flagfile deduplicate_events.sql
