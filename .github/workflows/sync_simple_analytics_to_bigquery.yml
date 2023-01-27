@@ -35,3 +35,7 @@ jobs:
           SA_API_KEY: ${{ secrets.SA_API_KEY }}
           SA_BIGQUERY_PROJECT_ID: ${{ secrets.SA_BIGQUERY_PROJECT_ID }}
           SA_BIGQUERY_DATASET_ID: ${{ secrets.SA_BIGQUERY_DATASET_ID }}
+      - name: Set up Cloud SDK
+        uses: 'google-github-actions/setup-gcloud@v1'
+      - name: Deduplicate tables
+        run: bq query --flagfile deduplicate.sql
