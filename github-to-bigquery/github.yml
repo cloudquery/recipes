@@ -4,7 +4,7 @@ spec:
   name: github
   path: cloudquery/github
   version: "v2.1.4"
-  tables: ["*"]
+  tables: ["github_repositories*"]
   destinations: ["bigquery"]
   spec:
     access_token: ${GH_ACCESS_TOKEN}
