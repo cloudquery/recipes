@@ -6,7 +6,7 @@ on:
     - cron: "0 2 * * *"  # daily at 02:00 UTC
 
 jobs:
-  simple-analytics-to-bigquery:
+  github-to-bigquery:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     defaults:
@@ -32,8 +32,8 @@ jobs:
         run: cloudquery sync --log-console github.yml bigquery.yml
         env:
           GH_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SA_BIGQUERY_PROJECT_ID: ${{ secrets.GH_BIGQUERY_PROJECT_ID }}
-          SA_BIGQUERY_DATASET_ID: ${{ secrets.GH_BIGQUERY_DATASET_ID }}
+          GH_BIGQUERY_PROJECT_ID: ${{ secrets.GH_BIGQUERY_PROJECT_ID }}
+          GH_BIGQUERY_DATASET_ID: ${{ secrets.GH_BIGQUERY_DATASET_ID }}
       - name: Set up Cloud SDK
         uses: 'google-github-actions/setup-gcloud@v1'
       - name: Deduplicate page views
