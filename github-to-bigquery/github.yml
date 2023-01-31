@@ -1,0 +1,11 @@
+kind: source
+spec:
+  # Source spec section
+  name: github
+  path: cloudquery/github
+  version: "v2.1.4"
+  tables: ["*"]
+  destinations: ["postgresql"]
+  spec:
+    access_token: ${GH_ACCESS_TOKEN}
+    orgs: ["cloudquery"] # Required. List of organizations to extract from
