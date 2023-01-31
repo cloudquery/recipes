@@ -34,9 +34,3 @@ jobs:
           GH_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_BIGQUERY_PROJECT_ID: ${{ secrets.GH_BIGQUERY_PROJECT_ID }}
           GH_BIGQUERY_DATASET_ID: ${{ secrets.GH_BIGQUERY_DATASET_ID }}
-      - name: Set up Cloud SDK
-        uses: 'google-github-actions/setup-gcloud@v1'
-      - name: Deduplicate page views
-        run: bq query --use_legacy_sql=False --flagfile deduplicate_page_views.sql
-      - name: Deduplicate events
-        run: bq query --use_legacy_sql=False --flagfile deduplicate_events.sql
