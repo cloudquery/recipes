@@ -5,7 +5,7 @@ spec:
   path: cloudquery/github
   version: "v2.1.4"
   tables: ["*"]
-  destinations: ["postgresql"]
+  destinations: ["bigquery"]
   spec:
     access_token: ${GH_ACCESS_TOKEN}
     orgs: ["cloudquery"] # Required. List of organizations to extract from
