@@ -1,7 +1,7 @@
 kind: source
 spec:
   name: "simple-analytics"
-  path: "hermanschaaf/simple-analytics"
+  path: "simpleanalytics/simple-analytics"
   version: "v1.0.0"
   tables:
     ["*"]
