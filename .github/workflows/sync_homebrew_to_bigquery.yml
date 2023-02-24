@@ -30,3 +30,6 @@ jobs:
           version: "v2.3.1"
       - name: CloudQuery Sync
         run: cloudquery sync --log-console homebrew.yml bigquery.yml
+        env:
+          HOMEBREW_BIGQUERY_PROJECT_ID: ${{ secrets.HOMEBREW_BIGQUERY_PROJECT_ID }}
+          HOMEBREW_BIGQUERY_DATASET_ID: ${{ secrets.HOMEBREW_BIGQUERY_DATASET_ID }}
