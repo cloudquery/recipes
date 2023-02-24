@@ -1,0 +1,9 @@
+kind: source
+spec:
+  name: "homebrew"
+  path: "cloudquery/homebrew"
+  version: "v1.0.0"
+  tables:
+    ["*"]
+  destinations:
+    - "bigquery"
