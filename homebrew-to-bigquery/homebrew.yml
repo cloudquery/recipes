@@ -1,0 +1,9 @@
+kind: source
+spec:
+  name: "simple-analytics"
+  path: "cloudquery/homebrew"
+  version: "v1.0.0"
+  tables:
+    ["*"]
+  destinations:
+    - "bigquery"

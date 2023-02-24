@@ -1,0 +1,9 @@
+kind: destination
+spec:
+  name: bigquery
+  path: cloudquery/bigquery
+  version: "v2.1.2"
+  write_mode: "append"
+  spec:
+    project_id: ${SA_BIGQUERY_PROJECT_ID}
+    dataset_id: ${SA_BIGQUERY_DATASET_ID}
