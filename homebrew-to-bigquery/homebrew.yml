@@ -1,6 +1,6 @@
 kind: source
 spec:
-  name: "simple-analytics"
+  name: "homebrew"
   path: "cloudquery/homebrew"
   version: "v1.0.0"
   tables:
