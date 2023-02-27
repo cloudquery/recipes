@@ -3,7 +3,7 @@ spec:
   # Source spec section
   name: github
   path: cloudquery/github
-  version: "v2.1.4"
+  version: "v4.0.0"
   tables: ["*"]
   destinations: ["bigquery"]
   spec:
